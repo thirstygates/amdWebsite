@@ -7,6 +7,7 @@ node_modules/
 
 # ignore all the files in db_data that is populated with a wordpress install
 db_data/*
+!db_data/foo.txt
 
 # ignore everything inside wordpress content folder:
 wordpress/*
