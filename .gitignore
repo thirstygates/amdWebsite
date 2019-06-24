@@ -6,7 +6,7 @@ node_modules/
 !.gitignore
 
 # ignore all the files in db_data that is populated with a wordpress install
-db_data/
+db_data/*
 
 # ignore everything inside wordpress content folder:
 wordpress/*
@@ -23,5 +23,6 @@ wordpress/wp-content/themes/twenty*/
 
 # dont ignore plugins
 !wordpress/wp-content/plugins/
+
 
 
