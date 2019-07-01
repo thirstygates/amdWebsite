@@ -17,6 +17,7 @@ one will have all the plugins needed for this to work
 
 the other will be the volume mapped to the /var/www/html of the docker container as specified in the docker-compose.yml
 
+it will be exposed on localhost:8080
 ```
 wordpress_cms
   |- engine // where wordpress will live
@@ -26,3 +27,5 @@ wordpress_cms
   |- Dockerfile
   |- uploads.ini
 ```
+
+
