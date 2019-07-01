@@ -34,8 +34,8 @@ services:
   wordpress:
     working_dir: /var/www/html
     build:
-      context: .
-      dockerfile: Dockerfile.wordpress
+      context: ./wordpress-cms
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "8080:80"

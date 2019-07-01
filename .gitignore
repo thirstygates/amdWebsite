@@ -1,5 +1,5 @@
-# ignore node modules
-node_modules/
+# ignore all node modules
+node_modules
 
 # ignore all the things starting with . except this file 
 .*
@@ -7,14 +7,6 @@ node_modules/
 
 # ignore all the files in db_data that is populated with a wordpress install
 db_data/*
-!db_data/foo.txt
-
-# ignore everything inside wordpress content folder:
-wordpress/*
-wordpress/wp-content/*
-
-!wordpress/wp-content
-
 
 # dont ignore themes
 !wordpress/wp-content/themes/
@@ -24,6 +16,10 @@ wordpress/wp-content/themes/twenty*/
 
 # dont ignore plugins
 !wordpress/wp-content/plugins/
+
+# gatsby files
+.cache/
+public/*
 
 
 
