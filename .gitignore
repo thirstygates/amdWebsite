@@ -9,13 +9,13 @@ node_modules
 db_data/*
 
 # dont ignore themes
-!wordpress/wp-content/themes/
+!wordpress_cms/wp-content/themes/
 
 # ignore the default themes
-wordpress/wp-content/themes/twenty*/
+wordpress_cms/wp-content/themes/twenty*/
 
 # dont ignore plugins
-!wordpress/wp-content/plugins/
+!wordpress_cms/wp-content/plugins/
 
 # gatsby files
 .cache/

@@ -9,5 +9,5 @@ WORKDIR /var/www/html
 COPY ./wordpress/uploads.ini /usr/local/etc/php/conf.d/uploads.ini
 
 # Copy wordpress content
-COPY ./wordpress/starter_content/plugins /usr/src/wordpress/wp-content/plugins
-COPY ./wordpress/startercontent/themes /usr/src/wordpress/wp-content/themes
+COPY ./starter_content/plugins /usr/src/wordpress/wp-content/plugins
+COPY ./starter_content/themes /usr/src/wordpress/wp-content/themes
