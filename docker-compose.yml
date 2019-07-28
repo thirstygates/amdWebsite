@@ -1,27 +1,50 @@
 version: "3"
 
 services:
+  gatsby:
+      working_dir: /home/gatsby-app
+      build:
+        context: ./gatsby-app
+      links:
+        - wordpress
+      depends_on:
+        - wordpress
+      restart: always
+      ports:
+        - "8000:8000"
+        - "9929:9929"
+        - "9230:9230"
+        - "3045:3045"
+      environment:
+        GATSBY_WEBPACK_PUBLICPATH: /
+        WORDPRESS_URL: wordpress
+
   db:
     image: mysql:5.7
+    restart: always
     volumes:
       - ./db_data:/var/lib/mysql
-    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: wordpress123
+      MYSQL_ROOT_PASSWORD: somewordpress
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     
   wordpress:
+    working_dir: /var/www/html
+    build:
+      context: ./wordpress_cms
+    restart: always
+    ports:
+      - "8080:80"
     depends_on:
       - db
-    image: wordpress:latest
-    volumes:
-      - ./wordpress:/var/www/html
-    ports:
-      - "80:80"
-    restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_INTERNAL_URL: http://wordpress
+    volumes:
+      - ./wordpress_cms/engine:/var/www/html
+      - ./wordpress_cms/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
